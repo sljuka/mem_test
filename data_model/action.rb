@@ -1,14 +1,12 @@
 require 'sequel'
 
-module Bizflow
+module DataModel
 
-  module DataModel
+  class Action < Sequel::Model
 
-    class Action < Sequel::Model
-
-      many_to_one :process
-
-    end
+    many_to_one :process
+    one_to_many :tasks
+    one_to_many :heads
 
   end
 
